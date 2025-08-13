@@ -35,6 +35,7 @@ if has('gui_running') || (has('termguicolors') && &termguicolors)  "Graphical Vi
   let s:BLUE   = '#4285F4'
   let s:BLACK  = '#202124'
   let s:DGREY  = '#5F6368'
+  let s:DDGREY  = '#2D3136'
   let s:LGREY  = '#E8EAED'
   let s:WHITE  = '#FFFFFF'
 
@@ -51,6 +52,7 @@ else                     "Console Vim
     let s:BLUE   = '69'
     let s:BLACK  = '16'
     let s:DGREY  = '59'
+    let s:DDGREY  = '39'
     let s:LGREY  = '189'
     let s:WHITE  = '231'
   else
@@ -61,6 +63,7 @@ else                     "Console Vim
     let s:BLUE   = 'blue'
     let s:BLACK  = 'black'
     let s:DGREY  = 'grey'
+    let s:DDGREY  = '#232323'
     let s:LGREY  = 'grey'
     let s:WHITE  = 'white'
   endif
@@ -84,6 +87,7 @@ if &background == 'dark'
   let s:GREY0  = s:WHITE
   let s:GREY1  = s:LGREY
   let s:GREY2  = s:DGREY
+  let s:GREY3  = s:DDGREY
   let s:BG     = s:BLACK
 else  "light
   let s:GREY0  = s:BLACK
@@ -158,7 +162,7 @@ exe 'hi Cursor         '.s:M.'bg='.s:GREY1 .' '.s:M.'fg='.s:BG    .' '.s:M.'=bol
 exe 'hi Search         '.s:M.'bg='.s:YELLOW.' '.s:M.'fg='.s:BG    .' '.s:M.'=none'
 exe 'hi IncSearch      '.s:M.'bg='.s:YELLOW.' '.s:M.'fg='.s:BG    .' '.s:M.'=none'
 exe 'hi ColorColumn    '.s:M.'bg='.s:GREY2 .' '.s:M.'fg='.'NONE'  .' '.s:M.'=none'
-exe 'hi SignColumn     '.s:M.'bg='.s:GREY2 .' '.s:M.'fg='.s:YELLOW.' '.s:M.'=none'
+exe 'hi SignColumn     '.s:M.'bg='.s:GREY3 .' '.s:M.'fg='.s:YELLOW.' '.s:M.'=none'
 
 exe 'hi WarningMsg     '.s:M.'bg='.s:BG    .' '.s:M.'fg='.s:RED   .' '.s:M.'=bold'
 exe 'hi ErrorMsg       '.s:M.'bg='.s:BG    .' '.s:M.'fg='.s:RED   .' '.s:M.'=bold'
@@ -177,10 +181,10 @@ exe 'hi PmenuThumb     '.s:M.'bg='.s:GREY0 .' '.s:M.'fg='.s:BG    .' '.s:M.'=non
 if (has('gui_running') || &t_Co == 256)
   exe 'hi Visual       '.s:M.'bg='.s:GREY2 .' '.s:M.'fg='.'NONE'  .' '.s:M.'=none'
   exe 'hi Pmenu        '.s:M.'bg='.s:GREY2 .' '.s:M.'fg='.s:GREY0 .' '.s:M.'=none'
-  exe 'hi Linenr       '.s:M.'bg='.s:GREY2 .' '.s:M.'fg='.s:GREY1 .' '.s:M.'=none'
+  exe 'hi Linenr       '.s:M.'bg='.s:GREY3 .' '.s:M.'fg='.s:GREY1 .' '.s:M.'=none'
   exe 'hi VertSplit    '.s:M.'bg='.s:GREY1 .' '.s:M.'fg='.s:GREY2 .' '.s:M.'=none'
-  exe 'hi StatusLine   '.s:M.'bg='.s:GREY1 .' '.s:M.'fg='.s:GREY2 .' '.s:M.'=bold'
-  exe 'hi StatusLineNC '.s:M.'bg='.s:GREY2 .' '.s:M.'fg='.s:GREY1 .' '.s:M.'=none'
+  exe 'hi StatusLine   '.s:M.'bg='.s:GREY3.' '.s:M.'fg='.s:GREY2 .' '.s:M.'=bold'
+  exe 'hi StatusLineNC '.s:M.'bg='.s:GREY3 .' '.s:M.'fg='.s:GREY1 .' '.s:M.'=none'
   exe 'hi Folded       '.s:M.'bg='.s:GREY2 .' '.s:M.'fg='.s:GREY1 .' '.s:M.'=none'
   exe 'hi FoldColumn   '.s:M.'bg='.s:GREY2 .' '.s:M.'fg='.s:GREY1 .' '.s:M.'=none'
 else
